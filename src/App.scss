@@ -14,7 +14,7 @@ $border-gradient: linear-gradient(-72deg,
         #dedede 84%,
         #a1a1a1);
 
-$border-gradient: #ccc;
+// $border-gradient: #ccc;
 $background-gradient: linear-gradient(180deg, #01399a, #011d56);
 
 body {
@@ -24,12 +24,13 @@ body {
 $priColor: #E04E5E;
 
 .questionBox {
-    @apply bg-blue-900 m-auto p-2 md:p-6;
-    @include gradient-border($border-gradient, 0.75rem, 3px);
+    @apply bg-blue-900 m-auto p-2 md:p-6 ;
+    @include gradient-border($border-gradient, 0.4rem, 4px);
+    // @apply border-[3px] rounded-xl shadow-2xl relative;
     background: $background-gradient;
 
     &:after {
-        @apply content-[""] w-screen h-[2px] absolute bg-[#e1dede] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[-1];
+        @apply content-[""] w-screen h-[3px] absolute bg-[#e1dede] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[-1];
     }
 
 }
@@ -70,6 +71,7 @@ $priColor: #E04E5E;
 
 .timer-border {
     @include gradient-border($border-gradient, 100%, 0.35rem);
+    // @apply rounded-full border-zinc-200 border-[6px];
     background: $background-gradient;
 
 }

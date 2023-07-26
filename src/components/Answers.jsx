@@ -1,12 +1,12 @@
 import { useRef } from "react";
 import { useState } from "react";
 
-const Answers = ({ value, id, isRight }) => {
+const Answers = ({ value, id, correct }) => {
     const answerBoxRef = useRef();
     const alphabates = ['A', 'B', 'C', 'D'];
 
     const handleOnClick = () =>{
-        answerBoxRef.current.classList.add(isRight ? 'right' : 'wrong');
+        answerBoxRef.current.classList.add(correct ? 'right' : 'wrong');
     }
 
     return (
