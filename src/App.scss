@@ -1,0 +1,75 @@
+@import './styles/mixins.scss';
+
+$border-gradient: linear-gradient(-72deg,
+        #dedede,
+        #ffffff 16%,
+        #dedede 21%,
+        #ffffff 24%,
+        #454545 27%,
+        #dedede 36%,
+        #ffffff 45%,
+        #ffffff 60%,
+        #dedede 72%,
+        #ffffff 80%,
+        #dedede 84%,
+        #a1a1a1);
+
+$border-gradient: #ccc;
+$background-gradient: linear-gradient(180deg, #01399a, #011d56);
+
+body {
+    @apply bg-[#04123f] min-h-screen text-white overflow-hidden;
+}
+
+$priColor: #E04E5E;
+
+.questionBox {
+    @apply bg-blue-900 m-auto p-2 md:p-6;
+    @include gradient-border($border-gradient, 0.75rem, 3px);
+    background: $background-gradient;
+
+    &:after {
+        @apply content-[""] w-screen h-[2px] absolute bg-[#e1dede] left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-[-1];
+    }
+
+}
+
+.answerBox {
+    @apply text-base md:text-2xl bg-blue-900 p-2 text-center cursor-pointer transition-all shadow-md;
+    @include gradient-border($border-gradient, 0.35rem, 2px);
+    background: $background-gradient;
+
+
+    &:nth-child(odd)::after{
+        @apply content-[""] w-[50vw] h-[2px] absolute bg-[#e1dede] -left-[50vw] top-1/2 transform -translate-y-1/2 z-[-1];
+    }
+
+    &:nth-child(even)::after{
+        @apply content-[""] w-[50vw] h-[2px] absolute bg-[#e1dede] -right-[50vw] top-1/2 transform -translate-y-1/2 z-[-1];
+    }
+
+    &.pending {
+        background: linear-gradient(-72deg, #dedede, #ffffff 16%, #dedede 21%, #ffffff 24%, #dedede 36%, #ffffff 45%, #ffffff 60%, #dedede 72%, #ffffff 80%, #dedede 84%, #a1a1a1);
+        @apply text-black border-2 rounded-[0.35rem] border-white;
+    }
+
+    &.wrong,
+    &.right {
+        background: unset;
+        @apply text-white border-2 rounded-[0.35rem];
+    }
+
+    &.wrong {
+        @apply bg-orange-600 border-red-400;
+    }
+
+    &.right {
+        @apply bg-green-600 border-green-300;
+    }
+}
+
+.timer-border {
+    @include gradient-border($border-gradient, 100%, 0.35rem);
+    background: $background-gradient;
+
+}
