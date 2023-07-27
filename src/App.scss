@@ -1,21 +1,18 @@
 @import './styles/mixins.scss';
 
-$border-gradient: linear-gradient(-72deg,
-        #dedede,
-        #ffffff 16%,
-        #dedede 21%,
-        #ffffff 24%,
-        #454545 27%,
-        #dedede 36%,
-        #ffffff 45%,
-        #ffffff 60%,
-        #dedede 72%,
-        #ffffff 80%,
-        #dedede 84%,
-        #a1a1a1);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-// $border-gradient: #ccc;
-$background-gradient: linear-gradient(180deg, #01399a, #011d56);
+@layer base {
+    :root {
+      --color-primary: #01399a;
+      --color-secondary: #011d56;
+    }
+}
+
+$border-gradient: linear-gradient(-72deg,#dedede,#ffffff 16%,#dedede 21%,#ffffff 24%,#454545 27%,#dedede 36%,#ffffff 45%,#ffffff 60%,#dedede 72%,#ffffff 80%,#dedede 84%,#a1a1a1);
+$background-gradient: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
 
 body {
     @apply bg-[#04123f] min-h-screen text-white overflow-hidden;
@@ -37,16 +34,19 @@ $priColor: #E04E5E;
 
 .answerBox {
     @apply text-base md:text-2xl bg-blue-900 p-2 text-center cursor-pointer transition-all shadow-md;
-    @include gradient-border($border-gradient, 0.35rem, 2px);
+    @apply border-[2px] md:border-[2px] rounded-md shadow-2xl relative active:scale-95 hover:contrast-125 transition-all;
     background: $background-gradient;
 
-
-    &:nth-child(odd)::after{
-        @apply content-[""] w-[50vw] h-[2px] absolute bg-[#e1dede] -left-[50vw] top-1/2 transform -translate-y-1/2 z-[-1];
+    &:nth-child(odd)::after,
+    &:nth-child(even)::after {
+        @apply content-[""] w-[50vw] h-[2px] absolute bg-[#e1dede] top-1/2 transform -translate-y-1/2 z-[-1];
     }
 
-    &:nth-child(even)::after{
-        @apply content-[""] w-[50vw] h-[2px] absolute bg-[#e1dede] -right-[50vw] top-1/2 transform -translate-y-1/2 z-[-1];
+    &:nth-child(odd)::after {
+        @apply  -left-[50vw];
+    }
+    &:nth-child(even)::after {
+        @apply  -right-[50vw];
     }
 
     &.pending {
@@ -61,11 +61,11 @@ $priColor: #E04E5E;
     }
 
     &.wrong {
-        @apply bg-orange-600 border-red-400;
+        @apply border-red-400  bg-gradient-to-b from-red-500 to-red-800 after:bg-red-500
     }
 
     &.right {
-        @apply bg-green-600 border-green-300;
+        @apply  border-green-300 bg-gradient-to-b from-green-500 to-green-800 after:bg-green-400;
     }
 }
 

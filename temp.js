@@ -731,40 +731,19 @@ const data =
 }
 
 
-// question: "Rolex is a company that specializes in what type of product?",
-//     options: [
-//         {
-//             value: "Phone",
-//              correct: false, 
-//         },
-//         {
-//             value: "Watches",
-//             correct: true,
-//         },
-//         {
-//             value: "Food",
-//              correct: false, 
-//         },
-//         {
-//             value: "Cosmetic",
-//              correct: false, 
-//         },
-//     ],
-
-const easy = data.easy.map((e, index) => {
+const easy = data.difficult.map((e, index) => {
     return {
         question: e.question,
-        difficulty: "easy",
-        options: e.options.map((o, index) => ({ value: o.option, correct: o.option === e.answer })),
+        answers: e.options.map((o, index) => ({ value: o.option, correct: o.option === e.answer })),
     }
 })
 
 
-// console.log(easy.length);
+console.log(easy.length);
 
 // save file as temp/questions.js
 
-// fs.writeFile('data/questions.js', JSON.stringify(easy), function (err) {
-//     if (err) throw err;
-//     console.log('Saved!');
-// });
+fs.writeFile('data/x.js', JSON.stringify(easy), function (err) {
+    if (err) throw err;
+    console.log('Saved!');
+});

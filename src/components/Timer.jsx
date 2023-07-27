@@ -1,26 +1,27 @@
 import { useEffect } from "react";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { countdown } from "../../store/slices/quizSlice";
 
-const Timer = ({  setTimeOut, questionNumber }) => {
-    const [timer, setTimer] = useState(60);
+const Timer = () => {
+    
+    const dispatch = useDispatch();
+    
+    const timer = useSelector(state => state.quiz.timer);
+    const isTimerPaused = useSelector(state => state.quiz.pauseTimer);
+
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setTimer(prev => {
-                if (prev <= 1) { clearInterval(intervalId); setTimeOut(false); }
-                return prev - 1;
-            })
+            if (isTimerPaused) return;
+            dispatch(countdown());
         }, 1000);
 
         return () => { clearInterval(intervalId) };
-    }, []);
+    }, [isTimerPaused]);
 
-    useEffect(() => {
-        setTimer(60);
-    }, [questionNumber]);
 
     return (
-            <div className="bg-blue-800 w-32 md:w-56 mb-16 md:mb-28 md:-translate-y-[1/10] aspect-square rounded-full flex items-center justify-center mx-auto timer-border">
+            <div className="bg-blue-800 w-32 md:w-56 mt-2 mb-16 md:mb-28 md:-translate-y-[1/10] aspect-square rounded-full flex items-center justify-center mx-auto timer-border">
                 <p className="text-6xl md:text-8xl">
                     {timer}
                 </p>
