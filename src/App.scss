@@ -6,8 +6,10 @@
 
 @layer base {
     :root {
-      --color-primary: #01399a;
-      --color-secondary: #011d56;
+     --color-primary: #015dc7;
+      --color-secondary: #001b50;
+    //   --color-primary: #01399a;
+    //   --color-secondary: #011d56;
     }
 }
 
@@ -15,6 +17,7 @@ $border-gradient: linear-gradient(-72deg,#dedede,#ffffff 16%,#dedede 21%,#ffffff
 $background-gradient: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
 
 body {
+    font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     @apply bg-[#04123f] min-h-screen text-white overflow-hidden;
 }
 
@@ -25,9 +28,9 @@ body {
 $priColor: #E04E5E;
 
 .questionBox {
-    @apply bg-blue-900 m-auto p-2 md:p-6 ;
-    @include gradient-border($border-gradient, 0.4rem, 4px);
-    // @apply border-[3px] rounded-xl shadow-2xl relative;
+    @apply bg-blue-900 m-auto p-2 md:p-6 text-xl md:text-3xl text-center;
+    // @include gradient-border($border-gradient, 0.4rem, 4px);
+    @apply border-[2px] md:border-[3px] rounded-lg shadow-2xl relative;
     background: $background-gradient;
 
     &:after {
@@ -53,23 +56,27 @@ $priColor: #E04E5E;
         @apply  -right-[50vw];
     }
 
-    &.pending {
-        background: linear-gradient(-72deg, #dedede, #ffffff 16%, #dedede 21%, #ffffff 24%, #dedede 36%, #ffffff 45%, #ffffff 60%, #dedede 72%, #ffffff 80%, #dedede 84%, #a1a1a1);
-        @apply text-black border-2 rounded-[0.35rem] border-white;
-    }
-
     &.wrong,
-    &.right {
+    &.right,
+    &.selected {
         background: unset;
         @apply text-white border-2 rounded-[0.35rem];
     }
 
+    &.selected {
+        @apply border-amber-500  bg-gradient-to-b from-amber-500 to-amber-700 after:bg-amber-500;
+        animation: blink 1s 1 forwards;
+    }
+
     &.wrong {
-        @apply border-red-400  bg-gradient-to-b from-red-500 to-red-800 after:bg-red-500
+        @apply border-red-400  bg-gradient-to-b from-red-500 to-red-800 after:bg-red-500;
+        // animation: blink 250ms 1 reverse forwards;
     }
 
     &.right {
         @apply  border-green-300 bg-gradient-to-b from-green-500 to-green-800 after:bg-green-400;
+        // animation: blink 250ms 1 reverse forwards;
+
     }
 }
 
@@ -77,5 +84,19 @@ $priColor: #E04E5E;
     @include gradient-border($border-gradient, 100%, 0.35rem);
     // @apply rounded-full border-zinc-200 border-[6px];
     background: $background-gradient;
+}
 
+@keyframes blink {
+    40% {
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

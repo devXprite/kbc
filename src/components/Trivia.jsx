@@ -6,10 +6,11 @@ import { gameOver, pauseTimer, updateQuestionIndex } from "../../store/slices/qu
 // import questionsData from "../../data/questions";
 import Timer from "./Timer";
 import { useRef } from "react";
-import { shuffle } from 'lodash';
+import { set, shuffle } from 'lodash';
 import { useMemo } from "react";
 import TopBar from "./TopBar";
 
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const Trivia = () => {
     const dispatch = useDispatch();
@@ -26,21 +27,26 @@ const Trivia = () => {
 
     const prefixs = ['A', 'B', 'C', 'D'];
 
-    const handleClick = (e) => {
+    const handleClick = async (e) => {
         const id = e.target.dataset.id;
         const correct = answers[id].correct || false;
 
         setSelected(id);
-        setClassName(correct ? 'right' : 'wrong');
         dispatch(pauseTimer());
 
-        if (!correct) setTimeout(() => { correctAnswerRef.current.classList.add('right') }, 900);
+        setClassName('selected');
+        
+        await sleep(1000);
+        setClassName(correct ? 'right' : 'wrong');
+
+        await sleep(250);
+        if (!correct) correctAnswerRef.current.classList.add('right');
+
+        await sleep(correct ? 1000 : 2000);
+        if (correct) { dispatch(updateQuestionIndex()); return; }
+        dispatch(gameOver());
 
 
-        setTimeout(() => {
-            if (correct) { dispatch(updateQuestionIndex()); return; }
-            dispatch(gameOver());
-        }, 1000 * (correct ? 2 : 2.5));
     }
 
 

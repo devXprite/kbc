@@ -3,12 +3,11 @@ import { sampleSize } from "lodash";
 const questions = {
     "easy": [
         {
-            "question": "Who is the present Prime Minister of India ?",
-            "difficulty": "easy",
+            "question": "Who is the present Prime Minister of India ?",         
             "answers": [
                 {
                     "value": "Devendra Farnandes",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Narendra Modi",
@@ -16,18 +15,17 @@ const questions = {
                 },
                 {
                     "value": "Mamta Banerjee",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Suresh Prabhu",
-                    "correct": false
                 }
             ]
         },
         {
 
             "question": "In which movie did Hrithik Roshan played the character of a thief ?",
-            "difficulty": "easy",
+            
             "answers": [
                 {
                     "value": "Dhoom 2",
@@ -35,34 +33,34 @@ const questions = {
                 },
                 {
                     "value": "Dhoom 3",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Dhoom",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Naksha",
-                    "correct": false
+                    
                 }
             ]
         },
         {
 
             "question": "What is the full form of HTML ?",
-            "difficulty": "easy",
+            
             "answers": [
                 {
                     "value": "HyperText Makeup Language",
-                    "correct": false
+                    
                 },
                 {
                     "value": "HyperTest Marking Language",
-                    "correct": false
+                    
                 },
                 {
                     "value": "HyperTest Making Language",
-                    "correct": false
+                    
                 },
                 {
                     "value": "HyperText Markup Language",
@@ -73,19 +71,19 @@ const questions = {
         {
 
             "question": "Which of these sounds would you associate with the heart ?",
-            "difficulty": "easy",
+            
             "answers": [
                 {
                     "value": "Tring Tring",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Tap Tap",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Click Click",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Dhak Dhak",
@@ -96,15 +94,15 @@ const questions = {
         {
 
             "question": "In the Ramayana, Which demon impersonated Rama's voice, screaming, 'Lakshman! Help me' ?",
-            "difficulty": "easy",
+            
             "answers": [
                 {
                     "value": "Khara",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Dushana",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Maricha",
@@ -112,22 +110,22 @@ const questions = {
                 },
                 {
                     "value": "Surpanakha",
-                    "correct": false
+                    
                 }
             ]
         },
         {
 
             "question": "With Which of these cards would you associate the phrase 'Aam Aadmi ka Adhikaar' ?",
-            "difficulty": "easy",
+            
             "answers": [
                 {
                     "value": "PAN Card",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Voter ID Card",
-                    "correct": false
+                    
                 },
                 {
                     "value": "AADHAR Card",
@@ -135,26 +133,26 @@ const questions = {
                 },
                 {
                     "value": "Ration Card",
-                    "correct": false
+                    
                 }
             ]
         },
         {
 
             "question": "Which of these is not a feature of Facebook ?",
-            "difficulty": "easy",
+            
             "answers": [
                 {
                     "value": "Like",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Timeline",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Poke",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Retweet",
@@ -165,15 +163,15 @@ const questions = {
         {
 
             "question": "What is your relation with your grandmother's granddaughter ?",
-            "difficulty": "easy",
+            
             "answers": [
                 {
                     "value": "Chachi",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Mata",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Bahan",
@@ -181,22 +179,22 @@ const questions = {
                 },
                 {
                     "value": "Bua",
-                    "correct": false
+                    
                 }
             ]
         },
         {
 
             "question": "Which animal is offered milk on 'Naga Panchami' ?",
-            "difficulty": "easy",
+            
             "answers": [
                 {
                     "value": "Mouse",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Cow",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Snake",
@@ -204,18 +202,18 @@ const questions = {
                 },
                 {
                     "value": "Bull",
-                    "correct": false
+                    
                 }
             ]
         },
         {
 
             "question": "In a 2014 film, Vidya Balan's character Bilkis Ahmed is also known by what other name ?",
-            "difficulty": "easy",
+            
             "answers": [
                 {
                     "value": "Babli Badmaash",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Bobby Jasoos",
@@ -223,22 +221,22 @@ const questions = {
                 },
                 {
                     "value": "Bebo Badnaam",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Baby Doll",
-                    "correct": false
+                    
                 }
             ]
         },
         {
 
             "question": "Which search engine has a button that says 'I'm feeling Lucky ?",
-            "difficulty": "easy",
+            
             "answers": [
                 {
                     "value": "Bing",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Google",
@@ -246,11 +244,11 @@ const questions = {
                 },
                 {
                     "value": "Yahoo!",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Wikipedia",
-                    "correct": false
+                    
                 }
             ]
         }
@@ -261,11 +259,11 @@ const questions = {
             "answers": [
                 {
                     "value": "Tipu Sultan",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Chandragupta Maurya",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Maharana Pratap",
@@ -273,7 +271,7 @@ const questions = {
                 },
                 {
                     "value": "Ashoka",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -282,7 +280,7 @@ const questions = {
             "answers": [
                 {
                     "value": "Arunachal Pradesh",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Uttrakhand",
@@ -290,11 +288,11 @@ const questions = {
                 },
                 {
                     "value": "Jammu and Kashmir",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Sikkim",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -303,11 +301,11 @@ const questions = {
             "answers": [
                 {
                     "value": "Leather",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Plastic",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Fabrics",
@@ -315,7 +313,7 @@ const questions = {
                 },
                 {
                     "value": "Rubber",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -324,7 +322,7 @@ const questions = {
             "answers": [
                 {
                     "value": "Sutlej",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Yamuna",
@@ -332,11 +330,11 @@ const questions = {
                 },
                 {
                     "value": "Shipra",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Ganga",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -345,11 +343,11 @@ const questions = {
             "answers": [
                 {
                     "value": "Zebra",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Musk Deer",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Barasingha",
@@ -357,7 +355,7 @@ const questions = {
                 },
                 {
                     "value": "Rhinocerous",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -370,15 +368,15 @@ const questions = {
                 },
                 {
                     "value": "Iris",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Pupil",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Retina",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -387,15 +385,15 @@ const questions = {
             "answers": [
                 {
                     "value": "Sunil Dutt and Nargis",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Rajiv and Sonia Gandhi",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Bill and Hillary Clinton",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Manmohan Singh and Gursharan Kaur",
@@ -408,7 +406,7 @@ const questions = {
             "answers": [
                 {
                     "value": "Thums Up",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Campa Cola",
@@ -416,11 +414,11 @@ const questions = {
                 },
                 {
                     "value": "Limca",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Coca-Cola",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -433,15 +431,15 @@ const questions = {
                 },
                 {
                     "value": "Subtraction",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Multiplication",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Division",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -454,15 +452,15 @@ const questions = {
                 },
                 {
                     "value": "Shakuntala",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Ahilya",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Gandhari",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -471,11 +469,11 @@ const questions = {
             "answers": [
                 {
                     "value": "Ashoka",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Peepul",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Babool",
@@ -483,7 +481,7 @@ const questions = {
                 },
                 {
                     "value": "Coconut",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -496,15 +494,15 @@ const questions = {
                 },
                 {
                     "value": "Vulture",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Owl",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Parrot",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -513,7 +511,7 @@ const questions = {
             "answers": [
                 {
                     "value": "Two",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Three",
@@ -521,11 +519,11 @@ const questions = {
                 },
                 {
                     "value": "Four",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Five",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -538,15 +536,15 @@ const questions = {
                 },
                 {
                     "value": "Argentina",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Kazakhstan",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Iran",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -559,15 +557,15 @@ const questions = {
                 },
                 {
                     "value": "Physics",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Peace",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Chemistry",
-                    "correct": false
+                    
                 }
             ]
         },
@@ -580,15 +578,15 @@ const questions = {
                 },
                 {
                     "value": "Sodium hydroxide",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Phosphoric acid",
-                    "correct": false
+                    
                 },
                 {
                     "value": "Sodium Chloride",
-                    "correct": false
+                    
                 }
             ]
         }
@@ -600,7 +598,7 @@ const questions = {
                 "answers": [
                     {
                         "value": "Charles Duke",
-                        "correct": false
+                        
                     },
                     {
                         "value": "James A Lovell",
@@ -608,11 +606,11 @@ const questions = {
                     },
                     {
                         "value": "Alan Bean",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Pete Conrad",
-                        "correct": false
+                        
                     }
                 ]
             },
@@ -625,15 +623,15 @@ const questions = {
                     },
                     {
                         "value": "Subrahmanyan Chandrasekhar",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Prabodh Chandra Sengupta",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Vainu Bappu",
-                        "correct": false
+                        
                     }
                 ]
             },
@@ -642,15 +640,15 @@ const questions = {
                 "answers": [
                     {
                         "value": "Krishna Sobti",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Mannu Bhandari",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Ira Pande",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Gaura Pant",
@@ -663,15 +661,15 @@ const questions = {
                 "answers": [
                     {
                         "value": "Sindhi",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Nepali",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Pashto",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Burmese",
@@ -684,7 +682,7 @@ const questions = {
                 "answers": [
                     {
                         "value": "Nitish Kumar",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Anand Kumar",
@@ -692,11 +690,11 @@ const questions = {
                     },
                     {
                         "value": "Sushil Kumar",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Anurag Anand",
-                        "correct": false
+                        
                     }
                 ]
             },
@@ -705,11 +703,11 @@ const questions = {
                 "answers": [
                     {
                         "value": "Bindusara",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Pulakesin II",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Samudragupta",
@@ -717,7 +715,7 @@ const questions = {
                     },
                     {
                         "value": "Ajantashatru",
-                        "correct": false
+                        
                     }
                 ]
             },
@@ -726,7 +724,7 @@ const questions = {
                 "answers": [
                     {
                         "value": "K M Beenamol",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Anju Bobby George",
@@ -734,11 +732,11 @@ const questions = {
                     },
                     {
                         "value": "Anuradha Biswal",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Neelam Jaswant Singh",
-                        "correct": false
+                        
                     }
                 ]
             },
@@ -747,11 +745,11 @@ const questions = {
                 "answers": [
                     {
                         "value": "Lachhu Maharaj",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Shambhu Maharaj",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Uday Shankar",
@@ -759,7 +757,7 @@ const questions = {
                     },
                     {
                         "value": "Kelucharan Mohapatra",
-                        "correct": false
+                        
                     }
                 ]
             },
@@ -768,15 +766,15 @@ const questions = {
                 "answers": [
                     {
                         "value": "Churchill",
-                        "correct": false
+                        
                     },
                     {
                         "value": "JFK",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Dwight Eisenhower",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Martin Luther King",
@@ -789,11 +787,11 @@ const questions = {
                 "answers": [
                     {
                         "value": "Badminton",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Snooker",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Polo",
@@ -801,7 +799,7 @@ const questions = {
                     },
                     {
                         "value": "Squash",
-                        "correct": false
+                        
                     }
                 ]
             },
@@ -814,15 +812,15 @@ const questions = {
                     },
                     {
                         "value": "Monte Rosa",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Mount Ararat",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Mount Elbrus",
-                        "correct": false
+                        
                     }
                 ]
             },
@@ -835,15 +833,15 @@ const questions = {
                     },
                     {
                         "value": "Squash",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Table tennis",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Polo",
-                        "correct": false
+                        
                     }
                 ]
             },
@@ -852,11 +850,11 @@ const questions = {
                 "answers": [
                     {
                         "value": "Nivedita Bahsin",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Trilochan Singh Brar",
-                        "correct": false
+                        
                     },
                     {
                         "value": "Ravish Malhotra",
@@ -864,7 +862,7 @@ const questions = {
                     },
                     {
                         "value": "Kamlesh Lulla",
-                        "correct": false
+                        
                     }
                 ]
             }
