@@ -65,7 +65,7 @@ $priColor: #E04E5E;
 
     &.selected {
         @apply border-amber-500  bg-gradient-to-b from-amber-500 to-amber-700 after:bg-amber-500;
-        animation: blink 1s 1 forwards;
+        animation: blink 0.9s 0.5s 1 forwards ease-in;
     }
 
     &.wrong {
@@ -87,13 +87,13 @@ $priColor: #E04E5E;
 }
 
 @keyframes blink {
-    40% {
+    45% {
         opacity: 1;
     }
-    50%{
+    65%{
         opacity: 0;
     }
-    70% {
+    82% {
         opacity: 1;
     }
     100% {

@@ -23,7 +23,8 @@ const Trivia = () => {
     const questionNumber = useSelector(state => state.quiz.questionIndex);
 
     const question = questionsData[questionNumber].question;
-    const answers = useMemo(() => shuffle(questionsData[questionNumber].answers), [questionNumber]);
+    const answers = questionsData[questionNumber].answers;
+    // const answers = useMemo(() => shuffle(questionsData[questionNumber].answers), [questionNumber]);
 
     const prefixs = ['A', 'B', 'C', 'D'];
 
@@ -36,7 +37,7 @@ const Trivia = () => {
 
         setClassName('selected');
         
-        await sleep(1000);
+        await sleep(1500);
         setClassName(correct ? 'right' : 'wrong');
 
         await sleep(250);
@@ -45,8 +46,6 @@ const Trivia = () => {
         await sleep(correct ? 1000 : 2000);
         if (correct) { dispatch(updateQuestionIndex()); return; }
         dispatch(gameOver());
-
-
     }
 
 

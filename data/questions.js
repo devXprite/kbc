@@ -1,4 +1,4 @@
-import { sampleSize } from "lodash";
+import { sampleSize, shuffle } from "lodash";
 
 const questions = {
     "easy": [
@@ -870,9 +870,18 @@ const questions = {
 }
 
 const randomQuestions = () => [
-    ...sampleSize(questions.easy, 6),
-    ...sampleSize(questions.moderate, 7),
-    ...sampleSize(questions.difficult, 8)
+    ...sampleSize(questions.easy, 5).map(question => ({
+        ...question,
+        answers: shuffle(question.answers)
+    })),
+    ...sampleSize(questions.moderate, 6).map(question => ({
+        ...question,
+        answers: shuffle(question.answers)
+    })),
+    ...sampleSize(questions.difficult, 5).map(question => ({
+        ...question,
+        answers: shuffle(question.answers)
+    }))
 ]
 
 export default randomQuestions;
