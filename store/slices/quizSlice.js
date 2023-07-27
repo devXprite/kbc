@@ -1,12 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import randomQuestions from "../../data/questions";
 
-
 const initialState = {
     isGameOver: false,
-    score: 0,
+    score: null,
     questionIndex: 0,
-    timer: 60,
+    timer: 40,
     pauseTimer: false,
     isTimeOut: false,
     questionData: randomQuestions()
@@ -20,7 +19,7 @@ const quizSlice = createSlice({
         updateQuestionIndex: (state) => {
             state.questionIndex++;
             state.pauseTimer = false;
-            state.timer = 60;
+            state.timer = initialState.timer;
 
             if (state.questionIndex <= 5) {
                 state.score += 1000;
@@ -45,7 +44,9 @@ const quizSlice = createSlice({
         },
         newGame: (state) => {
             return {
-                ...initialState, questionData: randomQuestions()
+                ...initialState, 
+                questionData: randomQuestions(), 
+                score: 0,
             };
         },
     },

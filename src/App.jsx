@@ -4,15 +4,12 @@ import { useSelector } from 'react-redux';
 import GameOver from './components/GameOver';
 
 function App() {
-  const isGameOver = useSelector(state => state.quiz.isGameOver);
-  // const score = useSelector(state => state.quiz.score);
-
-  // console.log(score);
+  const { isGameOver, score } = useSelector(state => state.quiz);
 
   return (
     <>
       <main className='flex justify-center items-center min-h-screen'>
-        {isGameOver ? <GameOver /> : <Trivia />}
+        {isGameOver || score === null ? <GameOver /> : <Trivia />}
       </main>
     </>
   )
