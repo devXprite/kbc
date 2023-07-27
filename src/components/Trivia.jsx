@@ -58,7 +58,7 @@ const Trivia = () => {
     return (
         <>
             <TopBar />
-            <div className='max-w-6xl mx-auto px-4 w-full md:-translate-y-[5%] overflow-x-hidden'>
+            <div className='max-w-6xl mx-auto px-4 w-full md:-translate-y-[5%]'>
                 <Timer />
                 <QuestionBox qus={question} />
                 <div className='mt-12 grid gap-4 md:gap-y-6 md:gap-x-24 grid-cols-1 md:grid-cols-2' >
