@@ -8,7 +8,7 @@ const initialState = {
     timer: 40,
     pauseTimer: false,
     isTimeOut: false,
-    questionData: randomQuestions()
+    questionsData: randomQuestions()
 };
 
 
@@ -45,7 +45,7 @@ const quizSlice = createSlice({
         newGame: (state) => {
             return {
                 ...initialState, 
-                questionData: randomQuestions(), 
+                questionsData: randomQuestions(), 
                 score: 0,
             };
         },

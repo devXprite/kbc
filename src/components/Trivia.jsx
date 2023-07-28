@@ -10,7 +10,7 @@ import TopBar from "./TopBar";
 import lets_play from '../assets/audio/lets_play.mp3';
 import correct_answer from '../assets/audio/correct_answer.mp3';
 import wrong_answer from '../assets/audio/wrong_answer.mp3';
-import background_music from '../assets/audio/easy.mp3';
+import clock from '../assets/audio/clock.mp3';
 import timeout from '../assets/audio/timeout.mp3';
 
 import useSound from "use-sound";
@@ -23,18 +23,15 @@ const Trivia = () => {
     const [playCorrectAnswer] = useSound(correct_answer);
     const [playWrongAnswer] = useSound(wrong_answer);
     const [playTimeout] = useSound(timeout);
-    const [playBg, {stop: stopBg}] = useSound(background_music, {interrupt: true, valume: 0.5});
+    const [playClock, {stop: stopClock}] = useSound(clock, {interrupt: true, valume: 0.5, loop: true});
 
     const correctAnswerRef = useRef(null);
     const [selected, setSelected] = useState(null);
     const [className, setClassName] = useState(null);
 
-    const isTimeOut = useSelector(state => state.quiz.isTimeOut);
-    const questionsData = useSelector(state => state.quiz.questionData)
-    const questionNumber = useSelector(state => state.quiz.questionIndex);
+    const { isTimeOut, questionsData, questionIndex: questionNumber } = useSelector(state => state.quiz);
+    const { question, answers } = questionsData[questionNumber];
 
-    const question = questionsData[questionNumber].question;
-    const answers = questionsData[questionNumber].answers;
 
     const prefixs = ['A', 'B', 'C', 'D'];
 
@@ -53,7 +50,7 @@ const Trivia = () => {
         await sleep(1000);
         setClassName(correct ? 'right' : 'wrong');
         if (!correct) correctAnswerRef.current.classList.add('right');
-        stopBg();
+        stopClock();
         
         await sleep(4000);
         if (correct) { dispatch(updateQuestionIndex()); return; }
@@ -63,14 +60,15 @@ const Trivia = () => {
     useEffect(() => {
         setSelected(null)
         playLetsPlay();
-        setTimeout(playBg, 2500);
+        setTimeout(playClock, 3100);
     }, [questionNumber]);
 
     useEffect(() => {
         if (isTimeOut) {
+            stopClock();
             playTimeout();
             correctAnswerRef.current.classList.add('right');
-            setTimeout(() => { dispatch(gameOver()) }, 3000)
+            setTimeout(() => { dispatch(gameOver()) }, 2800)
         }
     }, [isTimeOut]);
 
