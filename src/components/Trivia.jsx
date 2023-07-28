@@ -19,11 +19,11 @@ const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 const Trivia = () => {
     const dispatch = useDispatch();
-    const [playLetsPlay, {stop: stopLetsPlay}] = useSound(lets_play);
+    const [playLetsPlay, { stop: stopLetsPlay }] = useSound(lets_play, { interrupt: true });
     const [playCorrectAnswer] = useSound(correct_answer);
     const [playWrongAnswer] = useSound(wrong_answer);
     const [playTimeout] = useSound(timeout);
-    const [playClock, {stop: stopClock}] = useSound(clock, {interrupt: true, valume: 0.5, loop: true});
+    const [playClock, { stop: stopClock }] = useSound(clock, { interrupt: true, valume: 0.5, loop: true });
 
     const correctAnswerRef = useRef(null);
     const [selected, setSelected] = useState(null);
@@ -36,32 +36,35 @@ const Trivia = () => {
     const prefixs = ['A', 'B', 'C', 'D'];
 
     const handleClick = async (e) => {
+        if (selected != null) return;
+
         const id = e.target.dataset.id;
         const correct = answers[id].correct || false;
 
         setSelected(id);
         dispatch(pauseTimer());
-        
+
         setClassName('selected');
-        
+
         await sleep(500);
         correct ? playCorrectAnswer() : playWrongAnswer();
-        
+
         await sleep(1000);
         setClassName(correct ? 'right' : 'wrong');
         if (!correct) correctAnswerRef.current.classList.add('right');
         stopClock();
-        
+
         await sleep(4000);
         if (correct) { dispatch(updateQuestionIndex()); return; }
         dispatch(gameOver());
     }
 
     useEffect(() => {
-        setSelected(null)
+        setSelected(null);
         playLetsPlay();
-        setTimeout(playClock, 3100);
-    }, [questionNumber]);
+        setTimeout(playClock, 3100)
+    }, [questionNumber, stopLetsPlay, stopClock]);
+
 
     useEffect(() => {
         if (isTimeOut) {
