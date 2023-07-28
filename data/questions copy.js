@@ -3,11 +3,11 @@ import { sampleSize, shuffle } from "lodash";
 const questions = {
     "easy": [
         {
-            "question": "Who is the present Prime Minister of India ?",
+            "question": "Who is the present Prime Minister of India ?",         
             "answers": [
                 {
                     "value": "Devendra Farnandes",
-
+                    
                 },
                 {
                     "value": "Narendra Modi",
@@ -15,7 +15,7 @@ const questions = {
                 },
                 {
                     "value": "Mamta Banerjee",
-
+                    
                 },
                 {
                     "value": "Suresh Prabhu",
@@ -25,7 +25,7 @@ const questions = {
         {
 
             "question": "In which movie did Hrithik Roshan played the character of a thief ?",
-
+            
             "answers": [
                 {
                     "value": "Dhoom 2",
@@ -33,34 +33,34 @@ const questions = {
                 },
                 {
                     "value": "Dhoom 3",
-
+                    
                 },
                 {
                     "value": "Dhoom",
-
+                    
                 },
                 {
                     "value": "Naksha",
-
+                    
                 }
             ]
         },
         {
 
             "question": "What is the full form of HTML ?",
-
+            
             "answers": [
                 {
                     "value": "HyperText Makeup Language",
-
+                    
                 },
                 {
                     "value": "HyperTest Marking Language",
-
+                    
                 },
                 {
                     "value": "HyperTest Making Language",
-
+                    
                 },
                 {
                     "value": "HyperText Markup Language",
@@ -71,19 +71,19 @@ const questions = {
         {
 
             "question": "Which of these sounds would you associate with the heart ?",
-
+            
             "answers": [
                 {
                     "value": "Tring Tring",
-
+                    
                 },
                 {
                     "value": "Tap Tap",
-
+                    
                 },
                 {
                     "value": "Click Click",
-
+                    
                 },
                 {
                     "value": "Dhak Dhak",
@@ -94,15 +94,15 @@ const questions = {
         {
 
             "question": "In the Ramayana, Which demon impersonated Rama's voice, screaming, 'Lakshman! Help me' ?",
-
+            
             "answers": [
                 {
                     "value": "Khara",
-
+                    
                 },
                 {
                     "value": "Dushana",
-
+                    
                 },
                 {
                     "value": "Maricha",
@@ -110,22 +110,22 @@ const questions = {
                 },
                 {
                     "value": "Surpanakha",
-
+                    
                 }
             ]
         },
         {
 
             "question": "With Which of these cards would you associate the phrase 'Aam Aadmi ka Adhikaar' ?",
-
+            
             "answers": [
                 {
                     "value": "PAN Card",
-
+                    
                 },
                 {
                     "value": "Voter ID Card",
-
+                    
                 },
                 {
                     "value": "AADHAR Card",
@@ -133,26 +133,26 @@ const questions = {
                 },
                 {
                     "value": "Ration Card",
-
+                    
                 }
             ]
         },
         {
 
             "question": "Which of these is not a feature of Facebook ?",
-
+            
             "answers": [
                 {
                     "value": "Like",
-
+                    
                 },
                 {
                     "value": "Timeline",
-
+                    
                 },
                 {
                     "value": "Poke",
-
+                    
                 },
                 {
                     "value": "Retweet",
@@ -163,15 +163,15 @@ const questions = {
         {
 
             "question": "What is your relation with your grandmother's granddaughter ?",
-
+            
             "answers": [
                 {
                     "value": "Chachi",
-
+                    
                 },
                 {
                     "value": "Mata",
-
+                    
                 },
                 {
                     "value": "Bahan",
@@ -179,22 +179,22 @@ const questions = {
                 },
                 {
                     "value": "Bua",
-
+                    
                 }
             ]
         },
         {
 
             "question": "Which animal is offered milk on 'Naga Panchami' ?",
-
+            
             "answers": [
                 {
                     "value": "Mouse",
-
+                    
                 },
                 {
                     "value": "Cow",
-
+                    
                 },
                 {
                     "value": "Snake",
@@ -202,18 +202,18 @@ const questions = {
                 },
                 {
                     "value": "Bull",
-
+                    
                 }
             ]
         },
         {
 
             "question": "In a 2014 film, Vidya Balan's character Bilkis Ahmed is also known by what other name ?",
-
+            
             "answers": [
                 {
                     "value": "Babli Badmaash",
-
+                    
                 },
                 {
                     "value": "Bobby Jasoos",
@@ -221,22 +221,22 @@ const questions = {
                 },
                 {
                     "value": "Bebo Badnaam",
-
+                    
                 },
                 {
                     "value": "Baby Doll",
-
+                    
                 }
             ]
         },
         {
 
             "question": "Which search engine has a button that says 'I'm feeling Lucky ?",
-
+            
             "answers": [
                 {
                     "value": "Bing",
-
+                    
                 },
                 {
                     "value": "Google",
@@ -244,15 +244,14 @@ const questions = {
                 },
                 {
                     "value": "Yahoo!",
-
+                    
                 },
                 {
                     "value": "Wikipedia",
-
+                    
                 }
             ]
-        },
-        { "question": "Which of these was an empire on the Indian subcontinent? ", "answers": [{ "value": "Maurya Empire", "correct": true }, { "value": "Ming Empire" }, { "value": "Khmer Empire" }, { "value": "Siamese Empire" }] }, { "question": "Which is the longest river in India? (not including length in other countries)", "answers": [{ "value": "Ganges", "correct": true }, { "value": "Godavari" }, { "value": "Krishna" }, { "value": "Yamuna" }] }, { "question": "What is the largest desert in India?", "answers": [{ "value": "Thar Desert", "correct": true }, { "value": "Rann of Kutch" }, { "value": "Deccan Plateau" }, { "value": "Gobi Desert" }] }, { "question": "Which is the national flower of India?", "answers": [{ "value": "Lotus", "correct": true }, { "value": "Rose" }, { "value": "Jasmine" }, { "value": "Marigold" }] }, { "question": "Who was the Taj Mahal built in memory of?", "answers": [{ "value": "Mumtaj Mahal", "correct": true }, { "value": "Taj Bodhi" }, { "value": "Lugah Taj" }, { "value": "Mahal Mahore" }] }, { "question": "Which of these countries borders India?", "answers": [{ "value": "Pakistan", "correct": true }, { "value": "Tajikistan" }, { "value": "Kyrgyzstan" }, { "value": "Thailand" }] }, { "question": "When was the partition of India and Pakistan?", "answers": [{ "value": "1947", "correct": true }, { "value": "1891" }, { "value": "1763" }, { "value": "1999" }] }, { "question": "Who built the Taj Mahal?", "answers": [{ "value": "Shah Jahan", "correct": true }, { "value": "Ahmad Khan" }, { "value": "Shah Khan" }, { "value": "Genghis Khan" }] }, { "question": "What name is given to an Indian deep fried triangular pastry?", "answers": [{ "value": "Samosa", "correct": true }, { "value": "Pakora" }, { "value": "Curry" }, { "value": "Bhaji" }] }, { "question": "What is the name of the tree species native to India that has supporting roots and trunks, and a single tree can cover an area of up to 3 acres?", "answers": [{ "value": "Banyan", "correct": true }, { "value": "Teak" }, { "value": "Betula" }, { "value": "Camphor" }] }, { "question": "Which country is surrounded by India on three sides and China to the north?", "answers": [{ "value": "Nepal", "correct": true }, { "value": "Sri Lanka" }, { "value": "Bangladesh" }, { "value": "Pakistan" }] }, { "question": "Which is the largest mountain range in India?", "answers": [{ "value": "Himalayas", "correct": true }, { "value": "Aravalli" }, { "value": "Vindhyas" }, { "value": "Satpura" }] }, { "question": "Which of these countries borders India?", "answers": [{ "value": "Nepal", "correct": true }, { "value": "Tajikistan" }, { "value": "Kyrgyzstan" }, { "value": "Thailand" }] }, { "question": "Which of these cities is in India?", "answers": [{ "value": "Bangalore", "correct": true }, { "value": "Christchurch" }, { "value": "Beijing" }, { "value": "Wellington" }] }, { "question": "Which of these words describes the Indian state?", "answers": [{ "value": "Secular", "correct": true }, { "value": "Communist" }, { "value": "Feudal" }, { "value": "Monarchial" }] }, { "question": "Who wrote the national anthem of India?", "answers": [{ "value": "Rabindranath Tagore", "correct": true }, { "value": "Mahatma Gandhi" }, { "value": "Jawaharlal Nehru" }, { "value": "B.R. Ambedkar" }] }, { "question": "Which is the largest state in India?", "answers": [{ "value": "Rajasthan", "correct": true }, { "value": "Madhya Pradesh" }, { "value": "Maharashtra" }, { "value": "Uttar Pradesh" }] }, { "question": "Who became the Prime Minister of India in 2014?", "answers": [{ "value": "Narendra Modi", "correct": true }, { "value": "Rahul Gandhi" }, { "value": "Manmohan Singh" }, { "value": "Atal Bihari Vajpayee" }] }, { "question": "Which island nation has been called the 'teardrop of India' due to its location and shape?", "answers": [{ "value": "Sri Lanka", "correct": true }, { "value": "Madagascar" }, { "value": "Belize" }, { "value": "Fiji" }] }
+        }
     ],
     'moderate': [
         {
@@ -260,11 +259,11 @@ const questions = {
             "answers": [
                 {
                     "value": "Tipu Sultan",
-
+                    
                 },
                 {
                     "value": "Chandragupta Maurya",
-
+                    
                 },
                 {
                     "value": "Maharana Pratap",
@@ -272,7 +271,7 @@ const questions = {
                 },
                 {
                     "value": "Ashoka",
-
+                    
                 }
             ]
         },
@@ -281,7 +280,7 @@ const questions = {
             "answers": [
                 {
                     "value": "Arunachal Pradesh",
-
+                    
                 },
                 {
                     "value": "Uttrakhand",
@@ -289,11 +288,11 @@ const questions = {
                 },
                 {
                     "value": "Jammu and Kashmir",
-
+                    
                 },
                 {
                     "value": "Sikkim",
-
+                    
                 }
             ]
         },
@@ -302,11 +301,11 @@ const questions = {
             "answers": [
                 {
                     "value": "Leather",
-
+                    
                 },
                 {
                     "value": "Plastic",
-
+                    
                 },
                 {
                     "value": "Fabrics",
@@ -314,7 +313,7 @@ const questions = {
                 },
                 {
                     "value": "Rubber",
-
+                    
                 }
             ]
         },
@@ -323,7 +322,7 @@ const questions = {
             "answers": [
                 {
                     "value": "Sutlej",
-
+                    
                 },
                 {
                     "value": "Yamuna",
@@ -331,11 +330,11 @@ const questions = {
                 },
                 {
                     "value": "Shipra",
-
+                    
                 },
                 {
                     "value": "Ganga",
-
+                    
                 }
             ]
         },
@@ -344,11 +343,11 @@ const questions = {
             "answers": [
                 {
                     "value": "Zebra",
-
+                    
                 },
                 {
                     "value": "Musk Deer",
-
+                    
                 },
                 {
                     "value": "Barasingha",
@@ -356,7 +355,7 @@ const questions = {
                 },
                 {
                     "value": "Rhinocerous",
-
+                    
                 }
             ]
         },
@@ -369,15 +368,15 @@ const questions = {
                 },
                 {
                     "value": "Iris",
-
+                    
                 },
                 {
                     "value": "Pupil",
-
+                    
                 },
                 {
                     "value": "Retina",
-
+                    
                 }
             ]
         },
@@ -386,15 +385,15 @@ const questions = {
             "answers": [
                 {
                     "value": "Sunil Dutt and Nargis",
-
+                    
                 },
                 {
                     "value": "Rajiv and Sonia Gandhi",
-
+                    
                 },
                 {
                     "value": "Bill and Hillary Clinton",
-
+                    
                 },
                 {
                     "value": "Manmohan Singh and Gursharan Kaur",
@@ -407,7 +406,7 @@ const questions = {
             "answers": [
                 {
                     "value": "Thums Up",
-
+                    
                 },
                 {
                     "value": "Campa Cola",
@@ -415,11 +414,11 @@ const questions = {
                 },
                 {
                     "value": "Limca",
-
+                    
                 },
                 {
                     "value": "Coca-Cola",
-
+                    
                 }
             ]
         },
@@ -432,15 +431,15 @@ const questions = {
                 },
                 {
                     "value": "Subtraction",
-
+                    
                 },
                 {
                     "value": "Multiplication",
-
+                    
                 },
                 {
                     "value": "Division",
-
+                    
                 }
             ]
         },
@@ -453,15 +452,15 @@ const questions = {
                 },
                 {
                     "value": "Shakuntala",
-
+                    
                 },
                 {
                     "value": "Ahilya",
-
+                    
                 },
                 {
                     "value": "Gandhari",
-
+                    
                 }
             ]
         },
@@ -470,11 +469,11 @@ const questions = {
             "answers": [
                 {
                     "value": "Ashoka",
-
+                    
                 },
                 {
                     "value": "Peepul",
-
+                    
                 },
                 {
                     "value": "Babool",
@@ -482,7 +481,7 @@ const questions = {
                 },
                 {
                     "value": "Coconut",
-
+                    
                 }
             ]
         },
@@ -495,15 +494,15 @@ const questions = {
                 },
                 {
                     "value": "Vulture",
-
+                    
                 },
                 {
                     "value": "Owl",
-
+                    
                 },
                 {
                     "value": "Parrot",
-
+                    
                 }
             ]
         },
@@ -512,7 +511,7 @@ const questions = {
             "answers": [
                 {
                     "value": "Two",
-
+                    
                 },
                 {
                     "value": "Three",
@@ -520,11 +519,11 @@ const questions = {
                 },
                 {
                     "value": "Four",
-
+                    
                 },
                 {
                     "value": "Five",
-
+                    
                 }
             ]
         },
@@ -537,15 +536,15 @@ const questions = {
                 },
                 {
                     "value": "Argentina",
-
+                    
                 },
                 {
                     "value": "Kazakhstan",
-
+                    
                 },
                 {
                     "value": "Iran",
-
+                    
                 }
             ]
         },
@@ -558,15 +557,15 @@ const questions = {
                 },
                 {
                     "value": "Physics",
-
+                    
                 },
                 {
                     "value": "Peace",
-
+                    
                 },
                 {
                     "value": "Chemistry",
-
+                    
                 }
             ]
         },
@@ -579,19 +578,18 @@ const questions = {
                 },
                 {
                     "value": "Sodium hydroxide",
-
+                    
                 },
                 {
                     "value": "Phosphoric acid",
-
+                    
                 },
                 {
                     "value": "Sodium Chloride",
-
+                    
                 }
             ]
-        },
-        { "question": "Which building in Berlin was burned down In 1933?", "answers": [{ "value": "The Reichstag", "correct": true }, { "value": "The Brandenburg Gate" }, { "value": "Charlottenburg Palace" }, { "value": "The Berlin Wall" }] }, { "question": "During World War 2, which country was home to the White Rose, a group of student rebels fighting against fascism?", "answers": [{ "value": "Germany", "correct": true }, { "value": "France" }, { "value": "Spain" }, { "value": "Italy" }] }, { "question": "Where did Churchill, Roosevelt and Stalin meet in 1945?", "answers": [{ "value": "Yalta", "correct": true }, { "value": "Dresden" }, { "value": "Maastricht" }, { "value": "Versailles" }] }, { "question": "Who was the ruler of the Soviet Union from 1924 to his death, leading the Soviet Union in WWII?", "answers": [{ "value": "Joseph Stalin", "correct": true }, { "value": "Vladimir Lenin" }, { "value": "Nikita Khrushchev" }, { "value": "Peter the Great" }] }, { "question": "Which country declared war on the US after the attack on Pearl Harbor?", "answers": [{ "value": "Japan", "correct": true }, { "value": "Germany" }, { "value": "Italy" }, { "value": "Russia" }] }, { "question": "What year did World War II begin?", "answers": [{ "value": "1939", "correct": true }, { "value": "1941" }, { "value": "1945" }, { "value": "1937" }] }, { "question": "Which British Prime Minister was in office for the majority of World War II?", "answers": [{ "value": "Winston Churchill", "correct": true }, { "value": "Neville Chamberlain" }, { "value": "Anthony Eden" }, { "value": "Tony Blair" }] }, { "question": "What was the name of the defensive fortifications built by France along its border before World War 2?", "answers": [{ "value": "The Maginot Line", "correct": true }, { "value": "The Hadrian Wall" }, { "value": "The de Galle Bunkers" }, { "value": "The Vichy System" }] }, { "question": "What year did the United States enter World War II?", "answers": [{ "value": "1941", "correct": true }, { "value": "1939" }, { "value": "1948" }, { "value": "1945" }] }, { "question": "What was the name given to the atom bomb that was dropped on Hiroshima?", "answers": [{ "value": "Fat Man", "correct": true }, { "value": "Big Boy" }, { "value": "Bonnie Lad" }, { "value": "Chunky Joe" }] }
+        }
     ],
     'difficult':
         [
@@ -600,7 +598,7 @@ const questions = {
                 "answers": [
                     {
                         "value": "Charles Duke",
-
+                        
                     },
                     {
                         "value": "James A Lovell",
@@ -608,11 +606,11 @@ const questions = {
                     },
                     {
                         "value": "Alan Bean",
-
+                        
                     },
                     {
                         "value": "Pete Conrad",
-
+                        
                     }
                 ]
             },
@@ -625,15 +623,15 @@ const questions = {
                     },
                     {
                         "value": "Subrahmanyan Chandrasekhar",
-
+                        
                     },
                     {
                         "value": "Prabodh Chandra Sengupta",
-
+                        
                     },
                     {
                         "value": "Vainu Bappu",
-
+                        
                     }
                 ]
             },
@@ -642,15 +640,15 @@ const questions = {
                 "answers": [
                     {
                         "value": "Krishna Sobti",
-
+                        
                     },
                     {
                         "value": "Mannu Bhandari",
-
+                        
                     },
                     {
                         "value": "Ira Pande",
-
+                        
                     },
                     {
                         "value": "Gaura Pant",
@@ -663,15 +661,15 @@ const questions = {
                 "answers": [
                     {
                         "value": "Sindhi",
-
+                        
                     },
                     {
                         "value": "Nepali",
-
+                        
                     },
                     {
                         "value": "Pashto",
-
+                        
                     },
                     {
                         "value": "Burmese",
@@ -684,7 +682,7 @@ const questions = {
                 "answers": [
                     {
                         "value": "Nitish Kumar",
-
+                        
                     },
                     {
                         "value": "Anand Kumar",
@@ -692,11 +690,11 @@ const questions = {
                     },
                     {
                         "value": "Sushil Kumar",
-
+                        
                     },
                     {
                         "value": "Anurag Anand",
-
+                        
                     }
                 ]
             },
@@ -705,11 +703,11 @@ const questions = {
                 "answers": [
                     {
                         "value": "Bindusara",
-
+                        
                     },
                     {
                         "value": "Pulakesin II",
-
+                        
                     },
                     {
                         "value": "Samudragupta",
@@ -717,7 +715,7 @@ const questions = {
                     },
                     {
                         "value": "Ajantashatru",
-
+                        
                     }
                 ]
             },
@@ -726,7 +724,7 @@ const questions = {
                 "answers": [
                     {
                         "value": "K M Beenamol",
-
+                        
                     },
                     {
                         "value": "Anju Bobby George",
@@ -734,11 +732,11 @@ const questions = {
                     },
                     {
                         "value": "Anuradha Biswal",
-
+                        
                     },
                     {
                         "value": "Neelam Jaswant Singh",
-
+                        
                     }
                 ]
             },
@@ -747,11 +745,11 @@ const questions = {
                 "answers": [
                     {
                         "value": "Lachhu Maharaj",
-
+                        
                     },
                     {
                         "value": "Shambhu Maharaj",
-
+                        
                     },
                     {
                         "value": "Uday Shankar",
@@ -759,7 +757,7 @@ const questions = {
                     },
                     {
                         "value": "Kelucharan Mohapatra",
-
+                        
                     }
                 ]
             },
@@ -768,15 +766,15 @@ const questions = {
                 "answers": [
                     {
                         "value": "Churchill",
-
+                        
                     },
                     {
                         "value": "JFK",
-
+                        
                     },
                     {
                         "value": "Dwight Eisenhower",
-
+                        
                     },
                     {
                         "value": "Martin Luther King",
@@ -789,11 +787,11 @@ const questions = {
                 "answers": [
                     {
                         "value": "Badminton",
-
+                        
                     },
                     {
                         "value": "Snooker",
-
+                        
                     },
                     {
                         "value": "Polo",
@@ -801,7 +799,7 @@ const questions = {
                     },
                     {
                         "value": "Squash",
-
+                        
                     }
                 ]
             },
@@ -814,15 +812,15 @@ const questions = {
                     },
                     {
                         "value": "Monte Rosa",
-
+                        
                     },
                     {
                         "value": "Mount Ararat",
-
+                        
                     },
                     {
                         "value": "Mount Elbrus",
-
+                        
                     }
                 ]
             },
@@ -835,15 +833,15 @@ const questions = {
                     },
                     {
                         "value": "Squash",
-
+                        
                     },
                     {
                         "value": "Table tennis",
-
+                        
                     },
                     {
                         "value": "Polo",
-
+                        
                     }
                 ]
             },
@@ -852,11 +850,11 @@ const questions = {
                 "answers": [
                     {
                         "value": "Nivedita Bahsin",
-
+                        
                     },
                     {
                         "value": "Trilochan Singh Brar",
-
+                        
                     },
                     {
                         "value": "Ravish Malhotra",
@@ -864,7 +862,7 @@ const questions = {
                     },
                     {
                         "value": "Kamlesh Lulla",
-
+                        
                     }
                 ]
             }

@@ -28,8 +28,8 @@ const quizSlice = createSlice({
             }
 
         },
-        pauseTimer: (state) => {
-            state.pauseTimer = true;
+        pauseTimer: (state, action) => {
+            state.pauseTimer = action?.payload ?? true;
         },
         countdown: (state) => {
             if (state.timer === 0) {

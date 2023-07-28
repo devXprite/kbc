@@ -32,7 +32,6 @@ const Trivia = () => {
     const { isTimeOut, questionsData, questionIndex: questionNumber } = useSelector(state => state.quiz);
     const { question, answers } = questionsData[questionNumber];
 
-
     const prefixs = ['A', 'B', 'C', 'D'];
 
     const handleClick = async (e) => {
@@ -41,6 +40,7 @@ const Trivia = () => {
         const id = e.target.dataset.id;
         const correct = answers[id].correct || false;
 
+        stopLetsPlay()
         setSelected(id);
         dispatch(pauseTimer());
 
@@ -59,10 +59,12 @@ const Trivia = () => {
         dispatch(gameOver());
     }
 
-    useEffect(() => {
+    useEffect((e) => {
         setSelected(null);
         playLetsPlay();
-        setTimeout(playClock, 3100)
+        setTimeout(playClock, 2500);
+
+        return () => {stopLetsPlay(); stopClock()}
     }, [questionNumber, stopLetsPlay, stopClock]);
 
 
@@ -71,10 +73,9 @@ const Trivia = () => {
             stopClock();
             playTimeout();
             correctAnswerRef.current.classList.add('right');
-            setTimeout(() => { dispatch(gameOver()) }, 2800)
+            setTimeout(() => { dispatch(gameOver()) }, 3000)
         }
     }, [isTimeOut]);
-
 
     return (
         <>
