@@ -14,7 +14,7 @@ const GameOver = () => {
     return (
         <div>
             
-            {score > 0 && <Confetti width={width} height={height} />}
+            {score > 0 && <Confetti width={width} height={height} className="w-full" />}
 
             {score != null
                 ? <h1 className="text-4xl md:text-7xl text-center text-white">You Won: &nbsp;<span className='text-orange-500'>₹{score}</span> </h1>

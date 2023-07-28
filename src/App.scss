@@ -18,14 +18,12 @@ $background-gradient: linear-gradient(180deg, var(--color-primary), var(--color-
 
 body {
     font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    @apply bg-[#04123f] min-h-screen text-white overflow-hidden;
+    @apply bg-[#04123f] min-h-screen text-white;
 }
 
 #root{
-    @apply min-h-screen m-0 p-0 overflow-hidden;
+    @apply min-h-screen m-0 p-0 overflow-x-hidden;
 }
-
-$priColor: #E04E5E;
 
 .questionBox {
     @apply bg-blue-900 m-auto p-2 md:p-6 text-xl md:text-3xl text-center;
