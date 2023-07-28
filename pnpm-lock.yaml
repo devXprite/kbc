@@ -7,9 +7,6 @@ dependencies:
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
-  lodash.shuffle:
-    specifier: ^4.2.0
-    version: 4.2.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -19,9 +16,6 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
-  react-particles:
-    specifier: ^2.11.0
-    version: 2.11.0(react@18.2.0)
   react-redux:
     specifier: ^8.1.1
     version: 8.1.1(@types/react-dom@18.2.7)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1)
@@ -1761,10 +1755,6 @@ packages:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
     dev: true
 
-  /lodash.shuffle@4.2.0:
-    resolution: {integrity: sha512-V/rTAABKLFjoecTZjKSv+A1ZomG8hZg8hlgeG6wwQVD9AGv+10zqqSf6mFq2tVA703Zd5R0YhSuSlXA+E/Ei+Q==}
-    dev: false
-
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
     dev: false
@@ -2091,17 +2081,6 @@ packages:
 
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
-    dev: false
-
-  /react-particles@2.11.0(react@18.2.0):
-    resolution: {integrity: sha512-WfLKTyifBIMU826q1rQFt1WNw049mi0YGxsxns8YrG0aMa61lENX87GoSt/bB90c/lB4eqca0eGw9YsL3t+Tiw==}
-    requiresBuild: true
-    peerDependencies:
-      react: '>=16'
-    dependencies:
-      deep-eql: 4.1.3
-      react: 18.2.0
-      tsparticles-engine: 2.11.1
     dev: false
 
   /react-redux@8.1.1(@types/react-dom@18.2.7)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0)(redux@4.2.1):

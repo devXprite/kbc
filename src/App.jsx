@@ -2,7 +2,7 @@ import './App.scss'
 import Trivia from './components/Trivia'
 import { useSelector } from 'react-redux';
 import GameOver from './components/GameOver';
-import Particles from "react-particles";
+import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { useCallback } from 'react';
 
