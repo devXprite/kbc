@@ -10,10 +10,10 @@ import TopBar from "./TopBar";
 import lets_play from '../assets/audio/lets_play.mp3';
 import correct_answer from '../assets/audio/correct_answer.mp3';
 import wrong_answer from '../assets/audio/wrong_answer.mp3';
-import clock from '../assets/audio/clock.mp3';
 import timeout from '../assets/audio/timeout.mp3';
 
 import useSound from "use-sound";
+import LifeLines from "./Lifelines";
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -23,7 +23,6 @@ const Trivia = () => {
     const [playCorrectAnswer] = useSound(correct_answer);
     const [playWrongAnswer] = useSound(wrong_answer);
     const [playTimeout] = useSound(timeout);
-    const [playClock, { stop: stopClock }] = useSound(clock, { interrupt: true, valume: 0.5, loop: true });
 
     const correctAnswerRef = useRef(null);
     const [selected, setSelected] = useState(null);
@@ -52,7 +51,7 @@ const Trivia = () => {
         await sleep(1000);
         setClassName(correct ? 'right' : 'wrong');
         if (!correct) correctAnswerRef.current.classList.add('right');
-        stopClock();
+        ;
 
         await sleep(4000);
         if (correct) { dispatch(updateQuestionIndex()); return; }
@@ -62,25 +61,23 @@ const Trivia = () => {
     useEffect((e) => {
         setSelected(null);
         playLetsPlay();
-        setTimeout(playClock, 2500);
-
-        return () => {stopLetsPlay(); stopClock()}
-    }, [questionNumber, stopLetsPlay, stopClock]);
+        return () => { stopLetsPlay(); }
+    }, [questionNumber, stopLetsPlay]);
 
 
     useEffect(() => {
         if (isTimeOut) {
-            stopClock();
             playTimeout();
             correctAnswerRef.current.classList.add('right');
             setTimeout(() => { dispatch(gameOver()) }, 3000)
         }
     }, [isTimeOut]);
 
+
     return (
         <>
             <TopBar />
-            <div className='max-w-6xl mx-auto px-4 py-8 w-full md:-translate-y-[5%]'>
+            <div className='max-w-6xl mx-auto px-4 py-16 w-full md:-translate-y-[5%] relative'>
                 <Timer />
                 <QuestionBox qus={question} />
                 <div className='mt-12 grid gap-4 md:gap-y-6 md:gap-x-24 grid-cols-1 md:grid-cols-2' >
@@ -100,6 +97,11 @@ const Trivia = () => {
                         </div>
                     ))}
                 </div>
+                <LifeLines
+                    answer={answers.find(({ correct }) => correct).value}
+                    prefix={prefixs[answers.findIndex(({ correct }) => correct)]}
+                />
+
             </div>
         </>
     );

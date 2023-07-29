@@ -8,7 +8,13 @@ const initialState = {
     timer: 40,
     pauseTimer: false,
     isTimeOut: false,
-    questionsData: randomQuestions()
+    questionsData: randomQuestions(),
+    lifeLines: {
+        // fiftyFifty: true,
+        phone_a_friend: true,
+        ask_the_audience: true,
+        flip_the_question: true,
+    },
 };
 
 
@@ -49,6 +55,9 @@ const quizSlice = createSlice({
                 score: 0,
             };
         },
+        useLifeLine: (state, action) => {
+            state.lifeLines[action.payload] = false;
+        }
     },
 });
 
@@ -59,6 +68,7 @@ export const {
     gameOver,
     countdown,
     newGame,
+    useLifeLine
 } = quizSlice.actions;
 
 export default quizSlice.reducer;
