@@ -20,7 +20,7 @@ body {
     @apply min-h-screen text-white;
     font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     // @apply bg-gradient-to-br  from-blue-950 to-[#020c2b];
-    @apply bg-gradient-to-br  from-violet-950 to-[#0c0420] bg-fixed;
+    @apply bg-gradient-to-br  from-violet-950 to-[#0c0420] bg-no-repeat;
 
     
     -webkit-touch-callout: none;

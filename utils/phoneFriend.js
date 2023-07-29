@@ -12,7 +12,7 @@ const replies = [
 
 const phoneFriend = (correctAnswer) => {
     const reply = sample(replies);
-    const answer = `Your friend says:\n\n${reply.replace('%ans%', correctAnswer)}`;
+    const answer = reply.replace('%ans%', correctAnswer);
     return answer;
 }
  

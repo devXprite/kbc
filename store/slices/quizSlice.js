@@ -15,6 +15,7 @@ const initialState = {
         ask_the_audience: true,
         flip_the_question: true,
     },
+    isDialogOpen: false,
 };
 
 
@@ -57,6 +58,9 @@ const quizSlice = createSlice({
         },
         useLifeLine: (state, action) => {
             state.lifeLines[action.payload] = false;
+        },
+        dialog: (state, action) => {
+            state.isDialogOpen = action.payload;
         }
     },
 });

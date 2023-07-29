@@ -6,6 +6,7 @@ import { gameOver, pauseTimer, updateQuestionIndex } from "../../store/slices/qu
 import Timer from "./Timer";
 import { useRef } from "react";
 import TopBar from "./TopBar";
+import { motion } from "framer-motion"
 
 import lets_play from '../assets/audio/lets_play.mp3';
 import correct_answer from '../assets/audio/correct_answer.mp3';
@@ -14,6 +15,7 @@ import timeout from '../assets/audio/timeout.mp3';
 
 import useSound from "use-sound";
 import LifeLines from "./Lifelines";
+import Dialog from "./Dialog";
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -53,7 +55,7 @@ const Trivia = () => {
         if (!correct) correctAnswerRef.current.classList.add('right');
         ;
 
-        await sleep(4000);
+        await sleep(3000);
         if (correct) { dispatch(updateQuestionIndex()); return; }
         dispatch(gameOver());
     }
@@ -77,24 +79,29 @@ const Trivia = () => {
     return (
         <>
             <TopBar />
-            <div className='max-w-6xl mx-auto px-4 py-16 w-full md:-translate-y-[5%] relative'>
+            <div className='max-w-6xl mx-auto px-4 pt-20 pb-8 w-full md:-mt-20 relative'>
                 <Timer />
                 <QuestionBox qus={question} />
                 <div className='mt-12 grid gap-4 md:gap-y-6 md:gap-x-24 grid-cols-1 md:grid-cols-2' >
 
                     {answers.map(({ value, correct = false }, i) => (
-                        <div
-                            key={i}
+                        <motion.div
+                            key={`${i}-${value}`}
                             data-id={i}
                             ref={correct ? correctAnswerRef : null}
                             className={`answerBox ${i == selected ? className : ''}`}
                             onClick={handleClick}
+                            // rotate using framer motion
+                            initial={{ rotateX: 90, opacity: 0 }}
+                            animate={{ rotateX: 0, opacity: 1 }}
+                            transition={{ delay: 0.5 + i * 0.2, duration: 0.4}}
+
                         >
                             <p className="flex pointer-events-none" >
                                 <span className="font-bold px-1">{prefixs[i]}: </span>
                                 <span className="flex-1">{value}</span>
                             </p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
                 <LifeLines
