@@ -34,7 +34,7 @@ const Dialog = ({ children, onClose, isOpen = true, title, loader = false }) => 
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.15 }}
             onClick={handleOuterClick}
             className="fixed top-0 left-0 z-10 w-screen h-screen bg-black/40 backdrop-blur-sm flex items-center justify-center"
         >
@@ -55,7 +55,7 @@ const Dialog = ({ children, onClose, isOpen = true, title, loader = false }) => 
                         key={'dialog'}
                         initial={{ scale: 0, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
-                        transition={{ type: "spring", duration: 1.2, bounce: 0.35, delay: 0.2 }}
+                        transition={{ type: "spring", duration: 1.2, bounce: 0.35, delay: 0.15 }}
                         className="bg-violet-950 p-4 md:p-8 rounded-lg border-2 border-violet-500 w-[90vw] max-w-xl shadow-lg overflow-hidden"
                         exit={{ scale: 0, opacity: 0 }}
                     >

@@ -53,18 +53,17 @@ const Trivia = () => {
         await sleep(1000);
         setClassName(correct ? 'right' : 'wrong');
         if (!correct) correctAnswerRef.current.classList.add('right');
-        ;
 
         await sleep(3000);
         if (correct) { dispatch(updateQuestionIndex()); return; }
         dispatch(gameOver());
     }
 
-    useEffect((e) => {
+    useEffect(() => {
         setSelected(null);
         playLetsPlay();
         return () => { stopLetsPlay(); }
-    }, [questionNumber, stopLetsPlay]);
+    }, [question, stopLetsPlay]);
 
 
     useEffect(() => {
@@ -86,16 +85,15 @@ const Trivia = () => {
 
                     {answers.map(({ value, correct = false }, i) => (
                         <motion.div
-                            key={`${i}-${value}`}
                             data-id={i}
-                            ref={correct ? correctAnswerRef : null}
+                            key={`${i}-${value}`}
                             className={`answerBox ${i == selected ? className : ''}`}
                             onClick={handleClick}
-                            // rotate using framer motion
-                            initial={{ rotateX: 90, opacity: 0 }}
-                            animate={{ rotateX: 0, opacity: 1 }}
-                            transition={{ delay: 0.5 + i * 0.2, duration: 0.4}}
-
+                            initial={{ rotateX: 90 }}
+                            animate={{ rotateX: 0 }}
+                            ref={correct ? correctAnswerRef : null}
+                            transition={{ delay: 0.5 + i * 0.2, duration: 0.4 }}
+                            id={'answerBox-' + i}
                         >
                             <p className="flex pointer-events-none" >
                                 <span className="font-bold px-1">{prefixs[i]}: </span>
@@ -105,6 +103,7 @@ const Trivia = () => {
                     ))}
                 </div>
                 <LifeLines
+                    index={answers.findIndex(({ correct }) => correct)}
                     answer={answers.find(({ correct }) => correct).value}
                     prefix={prefixs[answers.findIndex(({ correct }) => correct)]}
                 />

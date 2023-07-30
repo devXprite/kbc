@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import randomQuestions from "../../data/questions";
+import randomQuestions, { flipQuestion } from "../../data/questions";
 
 const initialState = {
     isGameOver: false,
@@ -10,7 +10,7 @@ const initialState = {
     isTimeOut: false,
     questionsData: randomQuestions(),
     lifeLines: {
-        // fiftyFifty: true,
+        fifty_fifty: true,
         phone_a_friend: true,
         ask_the_audience: true,
         flip_the_question: true,
@@ -57,7 +57,14 @@ const quizSlice = createSlice({
             };
         },
         useLifeLine: (state, action) => {
-            state.lifeLines[action.payload] = false;
+            const lifeLine = action.payload;
+            state.lifeLines[lifeLine] = false;
+
+            if(lifeLine == 'flip_the_question'){
+                const {questionIndex} = state;
+                state.questionsData[questionIndex] = flipQuestion(questionIndex);
+                state.timer = initialState.timer;
+            }
         },
         dialog: (state, action) => {
             state.isDialogOpen = action.payload;

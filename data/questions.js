@@ -1,4 +1,4 @@
-import { sampleSize, shuffle } from "lodash";
+import { sample, sampleSize, shuffle } from "lodash";
 
 const questions = {
     "easy": [
@@ -886,4 +886,18 @@ const randomQuestions = () => [
     }))
 ]
 
+const flipQuestion = (questionIndex) => {
+    if (questionIndex < 5) {
+        return sample(questions.easy);
+    }
+
+    if (questionIndex < 11) {
+        return sample(questions.moderate);
+    }
+
+    return sample(questions.difficult);
+
+}
+
 export default randomQuestions;
+export { flipQuestion };

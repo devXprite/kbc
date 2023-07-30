@@ -7,9 +7,14 @@ import phoneFriend from '../../utils/phoneFriend';
 import Dialog from './Dialog';
 import { useState } from 'react';
 import { motion } from "framer-motion"
+import { sampleSize } from 'lodash';
 
 
 const iconsObj = {
+    fifty_fifty: {
+        icon: <span className='text-lg md:text-xl'>50:50</span>,
+        name: 'Fitfy Fifty'
+    },
     phone_a_friend: {
         icon: <IoMdCall />,
         name: 'Phone a Friend'
@@ -27,7 +32,7 @@ const iconsObj = {
 // md:mt-[5vh] translate-y-full 
 // absolute w-full left-1/2 -bottom-8 -translate-x-1/2   
 
-const LifeLines = ({ answer, prefix }) => {
+const LifeLines = ({ index, answer, prefix }) => {
 
     const dispatch = useDispatch()
     const { lifeLines } = useSelector(state => state.quiz);
@@ -53,11 +58,11 @@ const LifeLines = ({ answer, prefix }) => {
                             animate={{
                                 scaleY: [0.25, 1, 0.5, (e == prefix ? 1 : Math.abs((Math.random() - 0.5) + 0.25))],
                             }}
-                            transition={{ duration: 1.5, repeat: 3, repeatType: 'mirror', delay: i * 0.2, ease: 'linear' }}
+                            transition={{ duration: 1.2, repeat: 4, repeatType: 'mirror', delay: i * 0.2, ease: 'linear' }}
                             className='w-6 md:w-12 h-40 md:h-60 bg-gradient-to-b from-amber-300 to-amber-500  rounded origin-bottom' >
                         </motion.div>
                     ))}
-                    {['A', 'B', 'C', 'D'].map(e => ( <p className='font-bold md:text-xl'>{e}</p> ))
+                    {['A', 'B', 'C', 'D'].map(e => ( <p className='font-bold md:text-xl' key={e}>{e}</p> ))
                     }
 
                 </div>
@@ -69,9 +74,16 @@ const LifeLines = ({ answer, prefix }) => {
 
     const handleClick = (lifeline) => {
         dispatch(useLifeLine(lifeline));
-        setSelected(lifeline)
+        setSelected(lifeline);
 
-        if (lifeline == 'phone_a_friend' || lifeline == 'ask_the_audience') setIsDialogOpen(true)
+        if (lifeline == 'phone_a_friend' || lifeline == 'ask_the_audience') setIsDialogOpen(true);
+
+        if (lifeline == 'fifty_fifty') {
+            const removeAnswers = sampleSize([0, 1, 2, 3].filter(e => e != index), 2);
+            const wrongAnswers = document.querySelectorAll('.answerBox');
+            wrongAnswers[removeAnswers[0]].style.opacity = 0;
+            wrongAnswers[removeAnswers[1]].style.opacity = 0;
+        }
     }
 
     return (
