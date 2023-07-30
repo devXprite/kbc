@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-      {/* <Particles
+      <Particles
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
@@ -61,7 +61,7 @@ function App() {
           },
           detectRetina: true,
         }}
-      /> */}
+      />
       <main className='flex justify-center items-center min-h-screen'>
         {isGameOver || score === null ? <GameOver /> : <Trivia />}
       </main>
