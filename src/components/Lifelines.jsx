@@ -6,6 +6,7 @@ import { useLifeLine } from '../../store/slices/quizSlice';
 import phoneFriend from '../../utils/phoneFriend';
 import Dialog from './Dialog';
 import { useState } from 'react';
+import { motion } from "framer-motion"
 
 
 const iconsObj = {
@@ -42,6 +43,27 @@ const LifeLines = ({ answer, prefix }) => {
                 </>
             )
         }
+
+        if (lifeline == 'ask_the_audience') {
+            return (
+                <div className='grid grid-cols-4 justify-items-center gap-y-2'>
+                    {['A', 'B', 'C', 'D'].map((e, i) => (
+                        <motion.div
+                            key={e}
+                            animate={{
+                                scaleY: [0.25, 1, 0.5, (e == prefix ? 1 : Math.abs((Math.random() - 0.5) + 0.25))],
+                            }}
+                            transition={{ duration: 1.5, repeat: 3, repeatType: 'mirror', delay: i * 0.2, ease: 'linear' }}
+                            className='w-6 md:w-12 h-40 md:h-60 bg-gradient-to-b from-amber-300 to-amber-500  rounded origin-bottom' >
+                        </motion.div>
+                    ))}
+                    {['A', 'B', 'C', 'D'].map(e => ( <p className='font-bold md:text-xl'>{e}</p> ))
+                    }
+
+                </div>
+            )
+        }
+
     }
 
 
@@ -49,9 +71,7 @@ const LifeLines = ({ answer, prefix }) => {
         dispatch(useLifeLine(lifeline));
         setSelected(lifeline)
 
-        if (lifeline == 'phone_a_friend') {
-            setIsDialogOpen(true);
-        }
+        if (lifeline == 'phone_a_friend' || lifeline == 'ask_the_audience') setIsDialogOpen(true)
     }
 
     return (
@@ -67,7 +87,7 @@ const LifeLines = ({ answer, prefix }) => {
                     </div>
                 ))}
             </div>
-            {isDialogOpen && <Dialog onClose={() => setIsDialogOpen(false)}>
+            {isDialogOpen && <Dialog onClose={() => setIsDialogOpen(false)} loader={false}>
                 {dialogContent(selected)}
             </Dialog>}
         </>
