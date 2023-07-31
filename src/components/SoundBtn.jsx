@@ -6,7 +6,6 @@ const SoundBtn = () => {
     const dispatch = useDispatch();
     const { isMuted } = useSelector(state => state.quiz);
 
-
     return (
         <p
             className="absolute top-4 right-4 text-3xl md:text-5xl cursor-pointer"

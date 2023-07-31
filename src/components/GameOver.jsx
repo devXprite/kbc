@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 const GameOver = () => {
     const dispatch = useDispatch();
     const score = useSelector(state => state.quiz.score);
-    const [playTheme, { stop: stopTheme }] = useSound(theme, { interrupt: true, volume: 0.15 });
+    const [playTheme, { stop: stopTheme }] = useSound(theme, { interrupt: true, volume: 0.3 });
 
     const { width, height } = window.screen;
 

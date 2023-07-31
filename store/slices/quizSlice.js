@@ -53,6 +53,7 @@ const quizSlice = createSlice({
         newGame: (state) => {
             return {
                 ...initialState, 
+                isMuted: state.isMuted,
                 questionsData: randomQuestions(), 
                 score: 0,
             };

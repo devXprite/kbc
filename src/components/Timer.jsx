@@ -9,7 +9,7 @@ const Timer = () => {
     
     const timer = useSelector(state => state.quiz.timer);
     const isTimerPaused = useSelector(state => state.quiz.pauseTimer);
-    const [playClock, { stop: stopClock, pause: pauseClock }] = useSound(clock, { interrupt: true, valume: 0.5, loop: true });
+    const [playClock, { stop: stopClock, pause: pauseClock }] = useSound(clock, { interrupt: true, volume: 0.75, loop: true });
 
     useEffect(() => {
         if (isTimerPaused) {
