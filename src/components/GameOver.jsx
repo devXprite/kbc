@@ -19,15 +19,9 @@ const GameOver = () => {
         return () => { stopTheme() }
     }, [stopTheme])
 
-    // const animation = {
-    //     initial:{ opacity: 0, y: '20vh', scale: 0.5 }
-    //                 animate:{ opacity: 1, y: 0 , scale: 1}
-    //                 transition:{ duration: 1, type: 'spring', stiffness: 100 }
-    // }
-
 
     return (
-        <div>
+        <div className="pt-16 pb-12">
 
             {score > 0 && <Confetti width={width} height={height} className="w-full h-full" />}
 
@@ -47,8 +41,11 @@ const GameOver = () => {
                         initial={{ opacity: 0, y: 200 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.5, type: 'spring', stiffness: 100 }}
-                        className="px-4 text-justify mt-8 md:mt-16 max-w-4xl text-base md:text-xl" >
+                        className="px-4 text-justify mt-8 md:mt-16 max-w-6xl text-base md:text-xl" >
+                        Welcome to our free online version of the legendary game show "Kaun Banega Crorepati". <br /><br />
                         Test your knowledge and nerves as you take on 16 thrilling questions. With just 40 seconds to answer each question, the pressure is on! You'll be presented with four options (A, B, C, D) for each question, and making the right choice is crucial to moving forward in the game. As you climb higher, the questions become more challenging, offering an electrifying experience that keeps you on the edge of your seat. <br /><br />
+                        We have also included four powerful lifelines to assist you on your quest for the grand prize. The "Audience Poll" lets you tap into the wisdom of the masses, gaining valuable insights from the virtual audience's votes. "Phone a Friend" allows you to seek help from a trusted confidant, increasing your chances of finding the right answer. Feeling daring? The "Fifty-Fifty" lifeline eliminates two incorrect options, improving your odds. And for those game-changing moments, the "Flip the Question" lifeline lets you trade the current question for a new one. These lifelines are your key to success as you progress through the rounds and inch closer to becoming the next Crorepati!
+                        <br /><br />
                         So, are you ready to challenge yourself and see if you have what it takes to become the next Crorepati? Play now and find out!
 
                     </motion.p>

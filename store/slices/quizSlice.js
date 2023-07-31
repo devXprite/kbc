@@ -16,6 +16,7 @@ const initialState = {
         flip_the_question: true,
     },
     isDialogOpen: false,
+    isMuted: false,
 };
 
 
@@ -68,6 +69,10 @@ const quizSlice = createSlice({
         },
         dialog: (state, action) => {
             state.isDialogOpen = action.payload;
+        },
+        toogleSound: (state) => {
+            state.isMuted = !state.isMuted;
+            Howler.mute(state.isMuted);
         }
     },
 });
@@ -79,7 +84,8 @@ export const {
     gameOver,
     countdown,
     newGame,
-    useLifeLine
+    useLifeLine,
+    toogleSound,
 } = quizSlice.actions;
 
 export default quizSlice.reducer;

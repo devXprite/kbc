@@ -77,7 +77,7 @@ const Trivia = () => {
 
     return (
         <>
-            <TopBar />
+            {/* <TopBar /> */}
             <div className='max-w-6xl mx-auto px-4 pt-20 pb-8 w-full md:-mt-20 relative'>
                 <Timer />
                 <QuestionBox qus={question} />

@@ -5,6 +5,7 @@ import GameOver from './components/GameOver';
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 import { useCallback } from 'react';
+import SoundBtn from './components/SoundBtn';
 
 function App() {
   const { isGameOver, score } = useSelector(state => state.quiz);
@@ -26,7 +27,7 @@ function App() {
         options={{
           fpsLimit: 120,
           interactivity: {
-              resize: true,
+            resize: true,
           },
           particles: {
             color: {
@@ -62,6 +63,7 @@ function App() {
           detectRetina: true,
         }}
       />
+      <SoundBtn />
       <main className='flex justify-center items-center min-h-screen'>
         {isGameOver || score === null ? <GameOver /> : <Trivia />}
       </main>

@@ -51,7 +51,7 @@ const LifeLines = ({ index, answer, prefix }) => {
 
         if (lifeline == 'ask_the_audience') {
             return (
-                <div className='grid grid-cols-4 justify-items-center gap-y-2'>
+                <div className='grid grid-cols-4 justify-items-center gap-y-2 max-w-lg md:w-screen'>
                     {['A', 'B', 'C', 'D'].map((e, i) => (
                         <motion.div
                             key={e}
