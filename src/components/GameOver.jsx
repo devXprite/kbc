@@ -38,7 +38,7 @@ const GameOver = () => {
                         transition={{ duration: 1, type: 'spring', stiffness: 100 }}
                         className="text-4xl md:text-6xl text-center text-white font-semibold">Welcome To KBC</motion.h1>
                     <motion.p
-                        initial={{ opacity: 0, y: 200 }}
+                        initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: 0.5, type: 'spring', stiffness: 100 }}
                         className="px-4 text-justify mt-8 md:mt-16 max-w-6xl text-base md:text-xl" >

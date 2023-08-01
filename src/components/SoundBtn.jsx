@@ -8,7 +8,7 @@ const SoundBtn = () => {
 
     return (
         <p
-            className="absolute top-4 right-4 text-3xl md:text-5xl cursor-pointer"
+            className="absolute top-4 right-4 text-3xl md:text-5xl cursor-pointer z-10"
             onClick={() => dispatch(toogleSound())}
             >
             {!isMuted ? <BiSolidVolumeFull /> : <BiVolumeMute />}

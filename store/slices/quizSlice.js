@@ -35,6 +35,10 @@ const quizSlice = createSlice({
                 state.score += state.score;
             }
 
+            if (state.questionIndex == 15) {
+                state.isGameOver = true;
+            }
+
         },
         pauseTimer: (state, action) => {
             state.pauseTimer = action?.payload ?? true;

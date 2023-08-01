@@ -6,9 +6,10 @@ import useSound from "use-sound";
 
 const Timer = () => {
     const dispatch = useDispatch();
-    
-    const timer = useSelector(state => state.quiz.timer);
-    const isTimerPaused = useSelector(state => state.quiz.pauseTimer);
+
+
+    const { timer, pauseTimer: isTimerPaused } = useSelector(state => state.quiz)
+
     const [playClock, { stop: stopClock, pause: pauseClock }] = useSound(clock, { interrupt: true, volume: 0.75, loop: true });
 
     useEffect(() => {
@@ -16,11 +17,11 @@ const Timer = () => {
             pauseClock();
         } else {
             playClock();
-        }     
+        }
         return () => { stopClock() };
     }, [isTimerPaused, playClock]);
 
-    useEffect(() => {     
+    useEffect(() => {
         const intervalId = setInterval(() => {
             if (isTimerPaused) return;
             dispatch(countdown());
@@ -31,12 +32,12 @@ const Timer = () => {
 
 
     return (
-            <div 
+        <div
             className="bg-blue-800 w-28 md:w-56 mt-2 mb-12 md:mb-20 md:-translate-y-[1/10] aspect-square rounded-full flex items-center justify-center mx-auto timer-border">
-                <p className={`text-5xl md:text-8xl ${!isTimerPaused && 'ping'} ${timer <= 10 && 'text-orange-400'}`}>
-                    {timer}
-                </p>
-            </div>
+            <p className={`text-5xl md:text-8xl ${!isTimerPaused && 'ping'} ${timer <= 10 && 'text-orange-400'}`}>
+                {timer}
+            </p>
+        </div>
     );
 }
 

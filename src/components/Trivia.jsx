@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { gameOver, pauseTimer, updateQuestionIndex } from "../../store/slices/quizSlice";
 import Timer from "./Timer";
 import { useRef } from "react";
-import TopBar from "./TopBar";
 import { motion } from "framer-motion"
 
 import lets_play from '../assets/audio/lets_play.mp3';
@@ -15,7 +14,6 @@ import timeout from '../assets/audio/timeout.mp3';
 
 import useSound from "use-sound";
 import LifeLines from "./Lifelines";
-import Dialog from "./Dialog";
 
 const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 

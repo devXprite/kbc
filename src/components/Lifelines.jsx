@@ -1,4 +1,5 @@
-import { FaPhoneAlt, } from 'react-icons/fa';
+/* eslint-disable react-hooks/rules-of-hooks */
+/* eslint-disable react/prop-types */
 import { IoIosPeople, IoMdCall } from 'react-icons/io';
 import { LuRefreshCcw } from 'react-icons/lu';
 import { useDispatch, useSelector } from 'react-redux';
@@ -39,8 +40,8 @@ const LifeLines = ({ index, answer, prefix }) => {
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [selected, setSelected] = useState(null);
 
-    const dialogContent = (lifeline) => {
-        if (lifeline == 'phone_a_friend') {
+    const dialogContent = () => {
+        if (selected == 'phone_a_friend') {
             return (
                 <>
                     <p className='mb-2 text-lg md:text-xl'><b>Your friend says:</b></p>
@@ -49,7 +50,7 @@ const LifeLines = ({ index, answer, prefix }) => {
             )
         }
 
-        if (lifeline == 'ask_the_audience') {
+        if (selected == 'ask_the_audience') {
             return (
                 <div className='grid grid-cols-4 justify-items-center gap-y-2 max-w-lg md:w-screen'>
                     {['A', 'B', 'C', 'D'].map((e, i) => (
@@ -73,6 +74,8 @@ const LifeLines = ({ index, answer, prefix }) => {
 
 
     const handleClick = (lifeline) => {
+        if (!lifeLines[lifeline]) return;
+       
         dispatch(useLifeLine(lifeline));
         setSelected(lifeline);
 
