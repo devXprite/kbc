@@ -6,6 +6,16 @@ You will be presented with a series of 16 questions. Choose the correct answer f
 
 The goal is to answer all 16 questions correctly and win the grand prize!
 
+
+### Features:
+
+- **4 Lifelines** to assist you just like on the real show.
+- **16 random questions** in each session, ensuring a unique experience every time.
+- **40-second countdown** for each question to keep the challenge alive.
+- **Responsive design** for seamless gameplay across devices.
+- Built-in animation effects using Framer Motion for smooth transitions.
+- State management using Redux Toolkit for efficient handling of game logic.
+
 ### Lifelines:
 
 To help you progress through the game, there are four lifelines:
@@ -16,13 +26,20 @@ To help you progress through the game, there are four lifelines:
 4. **Flip the Question:** Change the current question for a new one.
 
 
+## How It Works
+- The game begins with a series of **16 questions**.
+- You will have **40 seconds** to answer each question.
+- Choose the correct answer from the four options (A, B, C, D).
+- Use your lifelines wisely to advance through the game and win the grand prize.
+- If the timer runs out or you answer incorrectly, the game is over.
+
 ## Technologies Used
 
-- React
-- Tailwind CSS
-- Redux Toolkit
-- Framer-Motion
-- SASS
+- **React:** For building the user interface and game logic.
+- **Tailwind CSS:** For styling and responsive design.
+- **Redux Toolkit:** For managing the game state and user progress.
+- **Framer Motion:** For adding animations to enhance the user experience.
+- **SASS:** For more flexible and maintainable styles.
 
 ## Contributing
 
